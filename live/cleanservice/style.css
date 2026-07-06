@@ -127,6 +127,7 @@ li { margin-bottom: 0.35rem; }
 .btn-white:hover { background: var(--cloud); color: var(--navy-700); }
 .btn-wa { background: #25d366; color: #06331b; }
 .btn-wa:hover { background: #1eb257; color: #fff; }
+.btn-nav-desktop { min-width: 160px; padding: 0.9rem 1.8rem; }
 
 /* Top bar */
 .topbar { background: var(--navy-700); color: var(--navy-soft); font-size: 0.86rem; }
@@ -292,3 +293,8 @@ li { margin-bottom: 0.35rem; }
   .primary-nav a { font-size: 0.85rem; }
   .header-cta .btn { display: none; }
 }
+@media (max-width:480px){ .container{ padding:0 1rem; } h1{ font-size:clamp(1.8rem,6vw,2.2rem); }
+h2{ font-size:1.6rem; } .btn{ width:100%; } .hero-cta{ flex-direction:column; } .hero-badge{ position:static; margin-top:1rem; } }
+
+@media (max-width:360px){ body{ font-size:1rem; } .brand{ font-size:1.1rem; } .section{ padding:2.5rem 0; } }
+*{ min-width:0; }
