@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+<div class="emergency-bar">
+	<div class="container">
+		<span>&#9888; 24/7 Emergency &amp;mdash; we&#039;re open right now.</span>
+		<span>Call South <a href="tel:+14169202002">(416) 920-2002</a></span>
+		<span>&amp;middot; North <a href="tel:+14162263663">(416) 226-3663</a></span>
+	</div>
+</div>
+
+<header class="site-header">
+	<div class="container">
+		<a class="brand" href="index.html">
+			<span class="brand-mark">&#128062;</span>
+			<span>VEC<small>Veterinary Emergency Clinic</small></span>
+		</a>
+
+		<button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+			<span></span><span></span><span></span>
+		</button>
+
+		<nav class="primary-nav" aria-label="Primary">
+			<ul id="primary-menu" class="menu"><li class="menu-item"><a href="index.html">Home</a></li><li class="menu-item"><a href="about.html">About</a></li><li class="menu-item"><a href="services.html">Services</a></li><li class="menu-item"><a href="specialists.html">Specialists</a></li><li class="menu-item"><a href="referring-vets.html">Referring Vets</a></li><li class="menu-item"><a href="contact.html">Contact</a></li></ul>		</nav>
+
+		<div class="header-cta">
+			<a class="btn btn-primary" href="tel:+14169202002">&#9742; Call 24/7</a>
+		</div>
+	</div>
+</header>
+
+<section class="hero" style="padding-bottom:var(--space-lg);">
+	<div class="container" style="padding-top:var(--space-lg);text-align:center;max-width:760px;">
+		<span class="eyebrow">Contact &amp;amp; Locations</span>
+		<h1>Two Toronto locations, open 24/7</h1>
+		<p class="hero-lead" style="margin:0 auto;">For an emergency, call the nearest location or come straight in — we&#039;re open right now.</p>
+	</div>
+</section>
+
+<section class="section">
+	<div class="container">
+		<div class="contact-grid">
+			<div>
+				<div class="contact-card">
+					<h3>VEC South</h3>
+					<div class="contact-line"><span class="ic">📍</span><span>920 Yonge St, Suite 117, Toronto, ON M4W 3C7<br>(Entrance at the rear, off McMurrich St. · underground parking)</span></div>
+					<div class="contact-line"><span class="ic">☎</span><span><a href="tel:+14169202002">(416) 920-2002</a> · Fax 416.920.6185</span></div>
+					<div class="contact-line"><span class="ic">🚇</span><span>Near Bloor &amp;amp; Rosedale subway stations (TTC)</span></div>
+					<div class="contact-line"><span class="ic">🕗</span><span>Open 24 hours a day, 7 days a week</span></div>
+				</div>
+				<iframe class="map-embed" loading="lazy" title="Map to VEC South" src="https://maps.google.com/maps?q=920%20Yonge%20St%2C%20Toronto%2C%20ON%20M4W%203C7&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+
+				<div class="contact-card" style="margin-top:var(--space-md);">
+					<h3>VEC North</h3>
+					<div class="contact-line"><span class="ic">📍</span><span>280 Sheppard Ave East, Toronto, ON</span></div>
+					<div class="contact-line"><span class="ic">☎</span><span><a href="tel:+14162263663">(416) 226-3663</a></span></div>
+					<div class="contact-line"><span class="ic">🕗</span><span>Open 24 hours a day, 7 days a week</span></div>
+				</div>
+				<iframe class="map-embed" loading="lazy" title="Map to VEC North" src="https://maps.google.com/maps?q=280%20Sheppard%20Ave%20East%2C%20Toronto%2C%20ON&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+			</div>
+
+			<div>
+				<div class="contact-card" style="background:#fff0f0;border-color:#ffd7d7;">
+					<h3 style="color:var(--coral-700);">⚠ Is this an emergency?</h3>
+					<p style="margin:0;">Don&#039;t wait for an email reply — call us now. We&#039;re open 24/7 and ready to help.</p>
+					<p style="margin:0.6rem 0 0;"><a class="btn btn-primary" href="tel:+14169202002">&#9742; Call now: (416) 920-2002</a></p>
+				</div>
+
+				<h2 style="margin-top:var(--space-md);">Send a non-urgent message</h2>
+				<form id="vecForm" class="vec-form" novalidate>
+					<div class="field">
+						<label for="full_name">Your name</label>
+						<input type="text" id="full_name" name="full_name" required>
+					</div>
+					<div class="field-row">
+						<div class="field">
+							<label for="phone">Phone</label>
+							<input type="tel" id="phone" name="phone">
+						</div>
+						<div class="field">
+							<label for="email">Email</label>
+							<input type="email" id="email" name="email">
+						</div>
+					</div>
+					<div class="field">
+						<label for="pet">Pet&#039;s name / species</label>
+						<input type="text" id="pet" name="pet" placeholder="e.g. Bella, dog">
+					</div>
+					<div class="field">
+						<label for="message">How can we help?</label>
+						<textarea id="message" name="message" rows="4" placeholder="A general question, records request, or feedback…"></textarea>
+					</div>
+					<button type="submit" class="btn btn-navy btn-lg" style="width:100%;">Send message</button>
+					<p style="font-size:0.88rem;color:var(--muted);margin:0.8rem 0 0;">For anything urgent, please call — do not wait for an email reply.</p>
+				</form>
+				<div id="vecSuccess" class="vec-success">
+					<h3>Thank you!</h3>
+					<p>We received your message and will be in touch. For anything urgent, please call (416) 920-2002.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="site-footer">
+	<div class="container">
+		<div class="footer-grid">
+			<div>
+				<a class="brand" href="index.html" style="color:#fff;">
+					<span class="brand-mark">&#128062;</span>
+					<span style="color:#fff;">VEC<small style="color:#9fb2cc;">Veterinary Emergency Clinic</small></span>
+				</a>
+				<p style="margin-top:1rem;max-width:36ch;">Toronto&#039;s 24/7 emergency and specialty animal hospital since 1974 — comfort, care, and compassion when your pet needs it most.</p>
+			</div>
+			<div>
+				<h4>VEC South</h4>
+				<p>
+					920 Yonge St, Suite 117, Toronto, ON M4W 3C7<br>
+					<a href="tel:+14169202002">(416) 920-2002</a><br>
+					Fax 416.920.6185				</p>
+				<h4 style="margin-top:1rem;">VEC North</h4>
+				<p>
+					280 Sheppard Ave East, Toronto, ON<br>
+					<a href="tel:+14162263663">(416) 226-3663</a>
+				</p>
+			</div>
+			<div>
+				<h4>Explore</h4>
+				<p style="display:flex;flex-direction:column;gap:0.4rem;">
+					<a href="services.html">Services</a>
+					<a href="specialists.html">Our Specialists</a>
+					<a href="referring-vets.html">Referring Vets</a>
+					<a href="contact.html">Contact &amp;amp; Locations</a>
+				</p>
+				<p style="margin-top:0.8rem;font-weight:700;color:#fff;">Open 24 hours, every day.</p>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>&copy; 2026 Veterinary Emergency Clinic and Referral Centre</span>
+			<span>CVO-accredited &amp;middot; Toronto &amp;middot; Since 1974</span>
+		</div>
+	</div>
+</footer>
+
+<div class="mobile-cta">
+	<a class="btn btn-navy" href="contact.html">Locations</a>
+	<a class="btn btn-primary" href="tel:+14169202002">&#9742; Call 24/7</a>
+</div>
+
+<script>var vecForm = {"ajaxUrl":"#","nonce":"static"};</script>
+<script src="./assets/js/vec.js" defer></script>
+</body>
+</html>
