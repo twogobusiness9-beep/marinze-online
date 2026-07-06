@@ -1,0 +1,37 @@
+<svg viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Happy tooth mascot">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eaf8f8"/>
+      <stop offset="1" stop-color="#cdeeef"/>
+    </linearGradient>
+    <linearGradient id="tooth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eafafa"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="520" rx="28" fill="url(#bg)"/>
+  <circle cx="530" cy="90" r="46" fill="#ffc63d"/>
+  <g opacity="0.5" fill="#ffc63d">
+    <rect x="516" y="18" width="28" height="8" rx="4"/>
+    <rect x="588" y="86" width="28" height="8" rx="4"/>
+    <rect x="516" y="150" width="28" height="8" rx="4"/>
+  </g>
+  <circle cx="110" cy="420" r="70" fill="#ff6b6b" opacity="0.18"/>
+  <circle cx="560" cy="410" r="52" fill="#12a3a6" opacity="0.16"/>
+  <!-- tooth body -->
+  <g transform="translate(210 120)">
+    <path d="M110 8C70 8 44 30 26 30 6 30 -8 20 -8 60c0 60 18 120 34 176 8 28 26 44 40 44 16 0 20-34 34-34s18 34 34 34c14 0 32-16 40-44 16-56 34-116 34-176 0-40-14-30-34-30-18 0-44-22-84-22z" fill="url(#tooth)" stroke="#bfe6e7" stroke-width="4"/>
+    <!-- eyes -->
+    <circle cx="78" cy="120" r="12" fill="#21414a"/>
+    <circle cx="150" cy="120" r="12" fill="#21414a"/>
+    <circle cx="82" cy="116" r="4" fill="#fff"/>
+    <circle cx="154" cy="116" r="4" fill="#fff"/>
+    <!-- cheeks -->
+    <circle cx="52" cy="150" r="14" fill="#ff9aa2" opacity="0.7"/>
+    <circle cx="176" cy="150" r="14" fill="#ff9aa2" opacity="0.7"/>
+    <!-- smile -->
+    <path d="M78 150c14 22 58 22 72 0" fill="none" stroke="#21414a" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <!-- sparkle -->
+  <path d="M300 96l8 20 20 8-20 8-8 20-8-20-20-8 20-8z" fill="#ffc63d"/>
+</svg>
