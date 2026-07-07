@@ -62,8 +62,9 @@
           if (!target) return; // section not on this page — allow normal navigation
           e.preventDefault();
           closeNav();
+          // Smooth-scroll but keep the URL clean — no #hash is written, so the
+          // address bar stays at "/" instead of "/#about", "/#pricing", etc.
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          if (history.replaceState) history.replaceState(null, '', '#' + id);
         });
       });
     }
