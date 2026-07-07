@@ -555,3 +555,21 @@ section[id] { scroll-margin-top: 90px; }
   .reveal { opacity: 1; transform: none; transition: none; }
   * { animation-duration: .001ms !important; }
 }
+
+/* ---------- Subpage hero + CTA band (routes: /about/, /services/, …) ---------- */
+/* Dark band so the white top-nav stays readable and it matches the homepage hero. */
+.page-hero {
+  position: relative;
+  background: var(--ink);
+  color: #fff;
+  padding: 150px 0 70px;
+  overflow: hidden;
+  text-align: center;
+}
+.page-hero .section-head { margin-bottom: 0; }
+.page-hero .section-title { color: #fff; }
+.page-hero .section-intro { color: rgba(255, 255, 255, .8); }
+
+.cta-band { position: relative; background: var(--ink); color: #fff; overflow: hidden; text-align: center; }
+.cta-band-inner { position: relative; max-width: 640px; }
+.cta-band .cta-sub { margin-bottom: 30px; }

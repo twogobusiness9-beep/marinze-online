@@ -42,6 +42,32 @@
       });
     }
 
+    /* ---- Smart nav: smooth-scroll on the homepage, navigate elsewhere ---- */
+    // Nav/footer/CTA links point to real routes (/about/, /projects/, …). On the
+    // homepage every section is present, so intercept those clicks and smooth-scroll
+    // to the matching section instead of loading a new page. On any other page the
+    // links are left alone and navigate normally.
+    var isHomePage = (function () {
+      var path = location.pathname.replace(/index\.html$/, '');
+      return path === '/' || path === '';
+    })();
+
+    if (isHomePage) {
+      document.querySelectorAll('a[data-section]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          // Let modified / non-left clicks (open in new tab, etc.) behave normally.
+          if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          var id = link.getAttribute('data-section');
+          var target = id && document.getElementById(id);
+          if (!target) return; // section not on this page — allow normal navigation
+          e.preventDefault();
+          closeNav();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (history.replaceState) history.replaceState(null, '', '#' + id);
+        });
+      });
+    }
+
     /* ---- Project page tabs ---- */
     document.querySelectorAll('.project').forEach(function (project) {
       var tabs = project.querySelectorAll('.project-tab');
