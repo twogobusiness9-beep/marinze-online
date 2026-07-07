@@ -264,10 +264,10 @@ li { margin-bottom: 0.35rem; }
 	.mobile-cta .btn { flex: 1; justify-content: center; }
 }
 
-/* --- Header nav: collapse to full-screen mobile panel below desktop width.
-   The .container caps at 1180px (--maxw), so the long Spanish labels + WhatsApp
-   button can't fit inline much below this; switch to the proven panel instead. --- */
-@media (max-width: 1099px) {
+/* --- Header nav: stay inline on desktop AND tablet; only collapse to the
+   full-screen mobile panel at a true mobile breakpoint (<=767px). The ES/EN
+   switcher is independent (it lives in the top bar) and stays visible here. --- */
+@media (max-width: 767px) {
 	.nav-toggle { display: block; z-index: 100001; }
 	.header-cta .btn-nav-desktop { display: none; }
 
@@ -288,6 +288,13 @@ li { margin-bottom: 0.35rem; }
 	.primary-nav li.open > .sub-menu { display: block; }
 	.primary-nav li.open > a::after { transform: rotate(180deg); display: inline-block; }
 	.primary-nav .sub-menu a { padding: 0.35rem 0; color: var(--navy-soft); }
+}
+
+/* --- Tablet: not quite enough room for the WhatsApp CTA button alongside the
+   full nav, so drop the button (WhatsApp still lives in the top bar) but KEEP
+   the nav inline. Nothing collapses into the hamburger until true mobile. --- */
+@media (min-width: 768px) and (max-width: 949px) {
+	.header-cta { display: none; }
 }
 
 /* --- Small phones: shrink brand + language toggle so the header bar
