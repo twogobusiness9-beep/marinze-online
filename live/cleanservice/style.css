@@ -135,13 +135,13 @@ li { margin-bottom: 0.35rem; }
 .topbar a:hover { color: var(--emerald); }
 .topbar-meta { display: flex; gap: 1.4rem; flex-wrap: wrap; align-items: center; }
 
-/* Language toggle */
-.lang-toggle { display: inline-flex; border: 1px solid rgba(255,255,255,0.25); border-radius: 8px; overflow: hidden; }
-.lang-btn { background: transparent; border: 0; color: var(--navy-soft); font: inherit; font-weight: 700; font-size: 0.78rem; padding: 0.2rem 0.6rem; cursor: pointer; letter-spacing: 0.04em; }
-.lang-btn.active { background: var(--emerald); color: #06331b; }
-.header-cta .lang-toggle { border-color: var(--line); }
-.header-cta .lang-btn { color: var(--muted); }
-.header-cta .lang-btn.active { background: var(--navy); color: #fff; }
+/* Language toggle — lives in the top bar (secondary), above the main nav */
+.lang-toggle { display: inline-flex; border: 1px solid rgba(255,255,255,0.22); border-radius: 8px; overflow: hidden; }
+.lang-btn { background: transparent; border: 0; color: var(--navy-soft); font: inherit; font-weight: 700; font-size: 0.74rem; padding: 0.2rem 0.62rem; cursor: pointer; letter-spacing: 0.05em; transition: background 0.15s ease, color 0.15s ease; }
+.lang-btn:hover { background: rgba(255,255,255,0.08); color: var(--white); }
+/* Active language stands out clearly against the dark --navy-700 top bar */
+.lang-btn.active { background: var(--emerald-600); color: #04231a; }
+.lang-btn.active:hover { background: var(--emerald-600); color: #04231a; }
 
 /* Header / nav — sticky (proven) */
 .site-header {
