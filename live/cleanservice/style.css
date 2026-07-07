@@ -127,8 +127,7 @@ li { margin-bottom: 0.35rem; }
 .btn-white:hover { background: var(--cloud); color: var(--navy-700); }
 .btn-wa { background: #25d366; color: #06331b; }
 .btn-wa:hover { background: #1eb257; color: #fff; }
-.btn-nav-desktop { min-width: 220px; padding: 0.9rem 0.94rem; justify-content: center; }
-
+.btn-nav-desktop { min-width: 0; padding: 0.8rem 1rem; font-size: 0.9rem; justify-content: center; white-space: nowrap; }
 /* Top bar */
 .topbar { background: var(--navy-700); color: var(--navy-soft); font-size: 0.86rem; }
 .topbar .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 0.5rem; padding-bottom: 0.5rem; flex-wrap: wrap; }
@@ -151,14 +150,14 @@ li { margin-bottom: 0.35rem; }
 	backdrop-filter: saturate(1.4) blur(8px);
 	border-bottom: 1px solid var(--line);
 }
-.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 0.85rem; padding-bottom: 0.85rem; }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 0.9rem; padding-top: 0.85rem; padding-bottom: 0.85rem; }
 .brand { display: flex; align-items: center; gap: 0.7rem; font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--ink); }
 .brand:hover { color: var(--ink); }
 .brand .brand-mark { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--navy), var(--navy-600)); color: var(--white); display: grid; place-items: center; font-size: 1.3rem; }
 .brand small { display: block; font-family: var(--font-body); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
 
-.primary-nav > ul { display: flex; align-items: center; gap: clamp(0.7rem, 1.8vw, 1.4rem); list-style: none; margin: 0; padding: 0; }
-.primary-nav a { font-weight: 600; font-size: 0.95rem; color: var(--ink); }
+.primary-nav > ul { display: flex; align-items: center; gap: clamp(0.55rem, 1.2vw, 1rem); list-style: none; margin: 0; padding: 0; }
+.primary-nav a { font-weight: 600; font-size: 0.88rem; color: var(--ink); }
 .primary-nav a:hover { color: var(--emerald-700); }
 .primary-nav li { position: relative; margin: 0; }
 .primary-nav .menu-item-has-children > a::after { content: " ▾"; color: var(--muted); font-size: 0.8em; }
@@ -171,7 +170,7 @@ li { margin-bottom: 0.35rem; }
 .primary-nav li:hover > .sub-menu, .primary-nav li:focus-within > .sub-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 .primary-nav .sub-menu a { display: block; padding: 0.55rem 0.7rem; border-radius: 8px; font-size: 0.92rem; }
 .primary-nav .sub-menu a:hover { background: var(--mist); color: var(--emerald-700); }
-.header-cta { display: flex; align-items: center; gap: 0.7rem; }
+.header-cta { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
 
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 0.4rem; }
 .nav-toggle span { display: block; width: 26px; height: 2px; background: var(--ink); margin: 5px 0; transition: 0.2s; }
@@ -256,6 +255,19 @@ li { margin-bottom: 0.35rem; }
 
 @media (max-width: 720px) {
 	.topbar-meta .topbar-hide { display: none; }
+
+	.card-grid, .card-grid.cols-2, .card-grid.cols-4, .stats, .footer-grid { grid-template-columns: 1fr; }
+	.field-row { grid-template-columns: 1fr; }
+	.section { padding: var(--space-lg) 0; }
+
+	.mobile-cta { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; gap: 0.6rem; padding: 0.7rem; background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); border-top: 1px solid var(--line); }
+	.mobile-cta .btn { flex: 1; justify-content: center; }
+}
+
+/* --- Header nav: collapse to full-screen mobile panel below desktop width.
+   The .container caps at 1180px (--maxw), so the long Spanish labels + WhatsApp
+   button can't fit inline much below this; switch to the proven panel instead. --- */
+@media (max-width: 1099px) {
 	.nav-toggle { display: block; z-index: 100001; }
 	.header-cta .btn-nav-desktop { display: none; }
 
@@ -267,7 +279,7 @@ li { margin-bottom: 0.35rem; }
 		padding: 6rem 1.5rem 2rem; z-index: 100000; overflow-y: auto;
 	}
 	.primary-nav.open { transform: translateY(0); }
-	.primary-nav a { color: var(--white); }
+	.primary-nav a { color: var(--white); font-size: 1.05rem; }
 	.primary-nav a:hover { color: var(--emerald); }
 	.primary-nav > ul { flex-direction: column; align-items: flex-start; gap: 1.1rem; }
 
@@ -276,25 +288,17 @@ li { margin-bottom: 0.35rem; }
 	.primary-nav li.open > .sub-menu { display: block; }
 	.primary-nav li.open > a::after { transform: rotate(180deg); display: inline-block; }
 	.primary-nav .sub-menu a { padding: 0.35rem 0; color: var(--navy-soft); }
+}
 
-	.card-grid, .card-grid.cols-2, .card-grid.cols-4, .stats, .footer-grid { grid-template-columns: 1fr; }
-	.field-row { grid-template-columns: 1fr; }
-	.section { padding: var(--space-lg) 0; }
-
-	.mobile-cta { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; gap: 0.6rem; padding: 0.7rem; background: rgba(255,255,255,0.97); backdrop-filter: blur(8px); border-top: 1px solid var(--line); }
-	.mobile-cta .btn { flex: 1; justify-content: center; }
+/* --- Small phones: shrink brand + language toggle so the header bar
+   (brand · hamburger · ES/EN) never clips or overflows at ~320-400px. --- */
+@media (max-width: 400px) {
+	.site-header .container { gap: 0.55rem; }
+	.brand { font-size: 1.1rem; gap: 0.5rem; }
+	.brand .brand-mark { width: 36px; height: 36px; font-size: 1.05rem; }
+	.lang-btn { padding: 0.2rem 0.45rem; }
 }
 
 /* --- Nav polish: keep menu labels on one line (fixes multi-line wrapping) --- */
 .primary-nav > ul { flex-wrap: nowrap; }
 .primary-nav a, .primary-nav li { white-space: nowrap; }
-@media (max-width: 1024px) and (min-width: 721px) {
-  .primary-nav > ul { gap: 0.7rem; }
-  .primary-nav a { font-size: 0.85rem; }
-  .header-cta .btn { display: none; }
-}
-@media (max-width:480px){ .container{ padding:0 1rem; } h1{ font-size:clamp(1.8rem,6vw,2.2rem); }
-h2{ font-size:1.6rem; } .btn{ width:100%; } .hero-cta{ flex-direction:column; } .hero-badge{ position:static; margin-top:1rem; } }
-
-@media (max-width:360px){ body{ font-size:1rem; } .brand{ font-size:1.1rem; } .section{ padding:2.5rem 0; } }
-*{ min-width:0; }
