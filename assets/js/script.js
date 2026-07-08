@@ -24,6 +24,7 @@
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Open menu');
       document.body.style.overflow = '';
+      if (header) header.classList.remove('nav-open');
     };
 
     if (toggle && nav) {
@@ -33,6 +34,9 @@
         toggle.setAttribute('aria-expanded', String(isOpen));
         toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         document.body.style.overflow = isOpen ? 'hidden' : '';
+        // See .site-header.scrolled:not(.nav-open) in style.css: backdrop-filter
+        // on the header breaks position:fixed for the nav panel nested inside it.
+        if (header) header.classList.toggle('nav-open', isOpen);
       });
       nav.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', closeNav);

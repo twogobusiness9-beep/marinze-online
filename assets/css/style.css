@@ -152,8 +152,15 @@ section[id] { scroll-margin-top: 90px; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 20px; height: 72px; }
 .site-header.scrolled {
   background: rgba(255,255,255,.9);
-  backdrop-filter: saturate(180%) blur(12px);
   box-shadow: 0 1px 0 var(--line), var(--shadow-sm);
+}
+/* backdrop-filter on the header creates a new containing block for any
+   position:fixed descendant — which traps the full-screen mobile nav (a
+   descendant of .site-header) inside the header's own 72px box instead of
+   covering the viewport. Suspend it while the mobile nav is open; the nav
+   panel is fully opaque at that point, so the blur underneath isn't missed. */
+.site-header.scrolled:not(.nav-open) {
+  backdrop-filter: saturate(180%) blur(12px);
 }
 
 .brand { font-family: var(--font-head); font-weight: 800; font-size: 1.4rem; color: var(--ink); letter-spacing: -.02em; }
