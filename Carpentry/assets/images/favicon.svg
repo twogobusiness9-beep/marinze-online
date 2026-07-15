@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Carpentry USA">
+  <rect width="48" height="48" rx="11" fill="#16191d"/>
+  <g transform="translate(9 9.5) scale(1.28)" stroke="#e79a4c" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 6l6 6-3 3-6-6z"/>
+    <path d="M12 9l-8 8a2 2 0 0 0 0 3 2 2 0 0 0 3 0l8-8"/>
+  </g>
+</svg>

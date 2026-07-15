@@ -1,0 +1,46 @@
+<svg viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dog and cat cared for at an emergency vet">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef4fb"/>
+      <stop offset="1" stop-color="#dbe8f7"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e3f70"/>
+      <stop offset="1" stop-color="#14315c"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="520" rx="28" fill="url(#bg)"/>
+  <circle cx="540" cy="96" r="60" fill="#ff5a5f" opacity="0.14"/>
+  <circle cx="96" cy="430" r="72" fill="#4f86c6" opacity="0.14"/>
+
+  <g transform="translate(238 96)">
+    <path d="M82 0C52 16 22 22 0 22c0 84 12 150 82 190 70-40 82-106 82-190-22 0-52-6-82-22z" fill="url(#shield)"/>
+    <rect x="70" y="66" width="24" height="76" rx="6" fill="#fff"/>
+    <rect x="44" y="92" width="76" height="24" rx="6" fill="#fff"/>
+    <path d="M82 176c-6 0-11-3-11-3" stroke="#ff5a5f" stroke-width="0" />
+  </g>
+
+  <g transform="translate(150 300)">
+    <ellipse cx="60" cy="120" rx="70" ry="46" fill="#c98a5a"/>
+    <circle cx="60" cy="66" r="52" fill="#dfa06b"/>
+    <path d="M14 40c-14-6-22 10-14 26 6 12 20 12 20 12z" fill="#c98a5a"/>
+    <path d="M106 40c14-6 22 10 14 26-6 12-20 12-20 12z" fill="#c98a5a"/>
+    <circle cx="44" cy="62" r="7" fill="#17263f"/>
+    <circle cx="76" cy="62" r="7" fill="#17263f"/>
+    <ellipse cx="60" cy="82" rx="10" ry="7" fill="#17263f"/>
+    <path d="M60 89c0 8-8 10-14 8M60 89c0 8 8 10 14 8" fill="none" stroke="#17263f" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(360 320)">
+    <ellipse cx="60" cy="108" rx="60" ry="40" fill="#8a9bb5"/>
+    <circle cx="60" cy="60" r="46" fill="#a4b3c9"/>
+    <path d="M26 26l-6-26 30 16z" fill="#a4b3c9"/>
+    <path d="M94 26l6-26-30 16z" fill="#a4b3c9"/>
+    <circle cx="46" cy="58" r="6" fill="#17263f"/>
+    <circle cx="74" cy="58" r="6" fill="#17263f"/>
+    <path d="M60 68l-6 6h12z" fill="#ff5a5f"/>
+    <path d="M60 74v8M42 70l-18 4M42 78l-18 10M78 70l18 4M78 78l18 10" stroke="#17263f" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <path d="M40 250h70l16-40 24 80 18-40h380" fill="none" stroke="#ff5a5f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+</svg>

@@ -73,98 +73,17 @@
       });
     }
 
-    /* ---- Project page tabs ---- */
-    document.querySelectorAll('.project').forEach(function (project) {
-      var tabs = project.querySelectorAll('.project-tab');
-      var panels = project.querySelectorAll('.project-panel');
-
-      tabs.forEach(function (tab) {
-        tab.addEventListener('click', function () {
-          var target = tab.getAttribute('data-target');
-
-          tabs.forEach(function (t) {
-            var active = t === tab;
-            t.classList.toggle('is-active', active);
-            t.setAttribute('aria-selected', String(active));
-          });
-          panels.forEach(function (panel) {
-            panel.classList.toggle('is-active', panel.id === target);
-          });
-        });
-      });
-    });
-
-    /* ---- Lightbox ---- */
-    var lightbox = document.getElementById('lightbox');
-    var lightboxImg = document.getElementById('lightbox-img');
-    var lightboxClose = lightbox ? lightbox.querySelector('.lightbox-close') : null;
-
-    var closeLightbox = function () {
-      if (!lightbox) return;
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      if (lightboxImg) lightboxImg.src = '';
-      document.body.style.overflow = '';
+    /* ---- Pricing package -> prefill contact ---- */
+    var packageMsg = function (pkg) {
+      return 'Hi Marinze, I\'m interested in the ' + pkg + '. Please let me know how to get started.';
     };
-
-    if (lightbox && lightboxImg) {
-      document.querySelectorAll('.shot-frame').forEach(function (frame) {
-        frame.addEventListener('click', function () {
-          var full = frame.getAttribute('data-full');
-          var img = frame.querySelector('img');
-          if (!full) return;
-          lightboxImg.src = full;
-          lightboxImg.alt = img ? img.alt : '';
-          lightbox.classList.add('open');
-          lightbox.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden';
-        });
+    document.querySelectorAll('a[data-package]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var pkg = link.getAttribute('data-package');
+        try { sessionStorage.setItem('marinze_package', pkg); } catch (e) {}
+        var details = document.getElementById('cf-details');
+        if (details) details.value = packageMsg(pkg);
       });
-
-      lightbox.addEventListener('click', function (e) {
-        if (e.target === lightbox || e.target === lightboxClose) closeLightbox();
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeLightbox();
-      });
-    }
-
-    /* ---- Project detail modals ---- */
-    var openModal = null;
-    var lastFocus = null;
-
-    var closeModal = function () {
-      if (!openModal) return;
-      var frame = openModal.querySelector('.pm-frame');
-      if (frame) frame.removeAttribute('src'); // stop the embedded site
-      openModal.setAttribute('hidden', '');
-      openModal = null;
-      if (!document.querySelector('.lightbox.open')) document.body.style.overflow = '';
-      if (lastFocus) { lastFocus.focus(); lastFocus = null; }
-    };
-
-    document.querySelectorAll('[data-open]').forEach(function (trigger) {
-      trigger.addEventListener('click', function () {
-        var modal = document.getElementById(trigger.getAttribute('data-open'));
-        if (!modal) return;
-        lastFocus = trigger;
-        var frame = modal.querySelector('.pm-frame');
-        if (frame && !frame.getAttribute('src')) frame.setAttribute('src', frame.getAttribute('data-src'));
-        modal.removeAttribute('hidden');
-        modal.scrollTop = 0;
-        openModal = modal;
-        document.body.style.overflow = 'hidden';
-        var closeBtn = modal.querySelector('.pm-close');
-        if (closeBtn) closeBtn.focus();
-      });
-    });
-
-    document.querySelectorAll('[data-close]').forEach(function (el) {
-      el.addEventListener('click', closeModal);
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && openModal && !document.querySelector('.lightbox.open')) closeModal();
     });
 
     /* ---- Contact form (Web3Forms) ---- */
@@ -255,6 +174,15 @@
         return { preselect: preselect, ensureValue: function () { if (!input.value) preselect(); } };
       })();
       tzCombobox.preselect();
+
+      try {
+        var pendingPackage = sessionStorage.getItem('marinze_package');
+        if (pendingPackage) {
+          var detailsField = document.getElementById('cf-details');
+          if (detailsField && !detailsField.value) detailsField.value = packageMsg(pendingPackage);
+          sessionStorage.removeItem('marinze_package');
+        }
+      } catch (e) {}
 
       var setError = function (input, msg) {
         var field = input.closest('.field');
